@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 public class RadnikPoSatu extends Radnik{
 
-    //polja nema
+    //polja
+
+    private double cenaPoSatu;
 
     //konstruktori
 
@@ -10,9 +12,10 @@ public class RadnikPoSatu extends Radnik{
 
     }
 
-    public RadnikPoSatu(String ime, String prezime, String jmbg, String ziroRacun, double plata) {
+    public RadnikPoSatu(String ime, String prezime, String jmbg, String ziroRacun, double plata, double cenaPoSatu) {
 
         super(ime, prezime, jmbg, ziroRacun, plata);
+        this.cenaPoSatu = cenaPoSatu;
 
     }
 
@@ -20,13 +23,17 @@ public class RadnikPoSatu extends Radnik{
 
     Scanner scanner = new Scanner(System.in);
 
-    public void isplatiPlatu() {
+    public double isplatiPlatu(RadnikPoSatu radnikPoSatu) {
         System.out.println("Unesi broj radnih sati radnika " + (ime) + " " + (prezime) + " za ovaj mesec: ");
         double brojSati = scanner.nextDouble();
-        double zaIsplatu = super.isplatiPlatu(plata, brojSati);
-        System.out.println("Za isplatu radniku " + (ime) + " " + (prezime) + ": " + zaIsplatu);
+        double plata = brojSati * cenaPoSatu;
+        return plata;
 
     }
+
+    // get i set
+
+
 
     @Override
     public String toString() {

@@ -27,12 +27,10 @@ public class Radnik {
 
     }
 
-    //metode
+//get i set
 
-    protected double isplatiPlatu(Double jedinicnaCenaRada, Double brojJedinicaRada) {
 
-        double zaIsplatu = brojJedinicaRada * jedinicnaCenaRada;
-        return zaIsplatu;
+    public double getPlata() {return plata;}
 
-    }
+    public void setPlata(double plata) {this.plata = plata;}
 }
